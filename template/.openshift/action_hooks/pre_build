@@ -39,3 +39,4 @@ if [ ! -d $OPENSHIFT_DATA_DIR/bin ]; then
   # cleanup
   rm -rf $OPENSHIFT_TMP_DIR/*
 fi
+

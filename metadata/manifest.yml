@@ -1,13 +1,13 @@
-Name: diy
-Cartridge-Short-Name: DIY
+Name: python-tornado-xport
+Cartridge-Short-Name: pynado-xport
 Display-Name: Do-It-Yourself 0.1
 Description: "The extra-port Do-It-Yourself (DIY) application type is a blank slate for trying unsupported languages, frameworks, and middleware on OpenShift. This extension of the standard DIY cartridge exposes an extra port in addition to the one used for web access, which can be used for any protocol."
 Version: '0.1'
 License: "ASL 2.0"
 License-Url: http://www.apache.org/licenses/LICENSE-2.0.txt
 Cartridge-Version: 0.0.1
-Cartridge-Vendor: sosiouxme
-Vendor: sosiouxme
+Cartridge-Vendor: Phyo Arkar Lwin
+Vendor: hexcode
 Categories:
   - web_framework
   - experimental
@@ -68,7 +68,7 @@ Subscribes:
     Required: false
 Scaling:
   Min: 1
-  Max: 1
+  Max: -1
 Group-Overrides:
   - components:
     - web-proxy
@@ -77,18 +77,7 @@ Endpoints:
     Private-Port-Name: PORT
     Private-Port:      8080
     Public-Port-Name:  PROXY_PORT
-  Protocols:
-  - http
-  - ws
-  Options:
-    primary: true
-    Mappings:
-      - Frontend:      ""
-        Backend:       ""
-        Options:       { websocket: true }
-      - Frontend:      "/health"
-        Backend:       ""
-        Options:       { health: true }
+    Protocols: [http,ws]
   - Private-IP-Name:   IP
     Private-Port-Name: EXTRA_PORT
     Private-Port:      15000
