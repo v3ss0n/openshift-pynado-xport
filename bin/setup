@@ -10,4 +10,49 @@ esac
 # Create additional directories required by the diy cartridge
 mkdir -p ${OPENSHIFT_PYNADO_DIR}run
 
+
+#!/bin/bash
+# This is a simple script and will be executed on your CI system if 
+# available.  Otherwise it will execute while your application is stopped
+# before the build step.  This script gets executed directly, so it
+# could be python, php, ruby, etc.
+
+if [ ! -d $OPENSHIFT_DATA_DIR/bin ]; then
+  if [ "$OPENSHIFT_DATA_DIR/bin/python -V" != 'Python 2.7.8' ]; then
+    # install python 2.7.8
+    cd $OPENSHIFT_TMP_DIR
+    wget https://www.python.org/ftp/python/2.7.8/Python-2.7.8.tar.xz
+    tar xf Python-2.7.8.tar.xz
+    cd Python-2.7.8
+    ./configure --prefix=$OPENSHIFT_DATA_DIR
+    make install
+  fi
+
+  # set path
+  export PATH=$OPENSHIFT_DATA_DIR/bin:$PATH
+
+  # install setuptools and pip
+  #cd $OPENSHIFT_TMP_DIR
+  #wget http://pypi.python.org/packages/source/s/setuptools/setuptools-0.6c11.tar.gz
+  #tar zxf setuptools-0.6c11.tar.gz
+  #cd setuptools-0.6c11
+  #python setup.py install
+  if [! -d $OPENSHIFT_DATA_DIR/bin/pip ]; then
+    cd $OPENSHIFT_TMP_DIR
+    wget http://pypi.python.org/packages/source/p/pip/pip-1.5.5.tar.gz
+    tar zxf pip-1.5.5.tar.gz
+    cd pip-1.5.5
+    $OPENSHIFT_DATA_DIR/bin/python2.7 setup.py install
+    $OPENSHIFT_DATA_DIR/bin/pip install -r  "Tornado==3.2.2 pyCurl pymongo motor"
+  fi
+  
+  # install uwsgi
+  #pip install uwsgi
+
+  # cleanup
+  rm -rf $OPENSHIFT_TMP_DIR/*
+fi
+
+
+
 client_result "Disclaimer: This is an experimental cartridge that provides a way to try unsupported languages, frameworks, and middleware on OpenShift."
