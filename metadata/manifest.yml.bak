@@ -1,16 +1,21 @@
-Name: diy
-Cartridge-Short-Name: DIY
-Display-Name: Do-It-Yourself 0.1
-Description: "The extra-port Do-It-Yourself (DIY) application type is a blank slate for trying unsupported languages, frameworks, and middleware on OpenShift. This extension of the standard DIY cartridge exposes an extra port in addition to the one used for web access, which can be used for any protocol."
+Name: pynado_278_xport
+Cartridge-Short-Name: pynado
+Display-Name: Tornado 3.2.2 with Python 2.7.8 (Latest) with Extraport support.
+Description: This  cart based on DIY and Extraport so you can listen extra port on $OPENSHIFT_DIY_EXTRA_PORT.Also websocket is enabled but not tested yet.
 Version: '0.1'
-License: "ASL 2.0"
+License: ASL 2.0
 License-Url: http://www.apache.org/licenses/LICENSE-2.0.txt
-Cartridge-Version: 0.0.1
-Cartridge-Vendor: sosiouxme
-Vendor: sosiouxme
+Cartridge-Version: 0.0.13
+Compatible-Versions:
+- 0.0.10
+- 0.0.11
+- 0.0.12
+Cartridge-Vendor: hexcode
+Vendor: hexcode
 Categories:
   - web_framework
   - experimental
+  - tornado
 Website:
 Help-Topics:
   "Getting Started": https://www.openshift.com/community/videos/getting-started-with-diy-applications-on-openshift
@@ -52,35 +57,40 @@ Cart-Data:
     Type: environment
     Description: "Unique ID which identified the gear. This value changes between gears."
 Provides:
-  - diy-0.1
-  - diy
-Publishes:
+- diy-0.1
+- diy
+- tornado
+- extraport
+Publishes: 
   publish-http-url:
     Type: "NET_TCP:httpd-proxy-info"
   publish-gear-endpoint:
     Type: "NET_TCP:gear-endpoint-info"
 Subscribes:
-  set-db-connection-info:
-    Type: "ENV:NET_TCP:db:connection-info"
-    Required: false
-  set-nosql-db-connection-info:
-    Type: "ENV:NET_TCP:nosqldb:connection-info"
+  set-env:
+    Type: ENV:*
     Required: false
 Scaling:
   Min: 1
   Max: 1
 Group-Overrides:
-  - components:
-    - web-proxy
+- components:
+  - web-proxy
 Endpoints:
-  - Private-IP-Name:   IP
-    Private-Port-Name: PORT
-    Private-Port:      8080
-    Public-Port-Name:  PROXY_PORT
+- Private-IP-Name: IP
+  Private-Port-Name: PORT
+  Private-Port: 8080
+  Public-Port-Name: PROXY_PORT
+  Protocols:
+  - http
+  - ws
+  Options:
+    primary: true
     Mappings:
-      - Frontend:      ""
-        Backend:       ""
-        Options:       { websocket: true }
+  - Frontend: ''
+    Backend: ''
+    Options:
+      websocket: true
       - Frontend:      "/health"
         Backend:       ""
         Options:       { health: true }
