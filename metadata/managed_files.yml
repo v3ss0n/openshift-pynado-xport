@@ -8,7 +8,5 @@ locked_files:
 - env/*
 - hooks/
 - hooks/*
-- tmp/
-- conf/
 processed_templates:
 - '**/*.erb'
