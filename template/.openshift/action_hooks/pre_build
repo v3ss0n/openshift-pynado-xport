@@ -39,7 +39,9 @@ if [ ! -d $OPENSHIFT_DATA_DIR/bin ]; then
     tar zxf pip-1.5.5.tar.gz
     cd pip-1.5.5
     $OPENSHIFT_DATA_DIR/bin/python2.7 setup.py install
-    $OPENSHIFT_DATA_DIR/bin/pip install -r  Tornado==3.2.2 pyCurl pymongo motor virtualenv
+    ###TODO: Activate VENV , Install things , and run tornado from VENV
+    $OPENSHIFT_DATA_DIR/bin/pip install -r  "Tornado==3.2.2" pyCurl pymongo motor virtualenv httpie
+    
   fi
   # cleanup
   rm -rf $OPENSHIFT_TMP_DIR/*

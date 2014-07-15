@@ -11,3 +11,48 @@ esac
 mkdir -p ${OPENSHIFT_PYNADO_DIR}run
 
 client_result "Disclaimer: This is an experimental cartridge that provides a way to try unsupported languages, frameworks, and middleware on OpenShift."
+client_result "Disclaimer: BUilding and Install Python, Tornado , PyMongo , it will take 10mins+"
+
+if [ ! -d $OPENSHIFT_DATA_DIR/bin ]; then
+  if [ "$OPENSHIFT_DATA_DIR/bin/python -V" != 'Python 2.7.8' ]; then
+    # install python 2.7.8
+    cd $OPENSHIFT_TMP_DIR
+    wget https://www.python.org/ftp/python/2.7.8/Python-2.7.8.tar.xz
+    tar xf Python-2.7.8.tar.xz
+    cd Python-2.7.8
+    ./configure --prefix=$OPENSHIFT_DATA_DIR
+    make install
+  fi
+
+  # set path
+  export PATH=$OPENSHIFT_DATA_DIR/bin:$PATH
+
+  # install setuptools and pip
+  #cd $OPENSHIFT_TMP_DIR
+  #wget http://pypi.python.org/packages/source/s/setuptools/setuptools-0.6c11.tar.gz
+  #tar zxf setuptools-0.6c11.tar.gz
+  #cd setuptools-0.6c11
+  #python setup.py install
+
+  
+  # install uwsgi
+  #pip install uwsgi
+  if [ ! -d $OPENSHIFT_DATA_DIR/bin/pip ]; then
+    cd $OPENSHIFT_TMP_DIR
+    wget http://pypi.python.org/packages/source/s/setuptools/setuptools-0.6c11.tar.gz
+    tar zxf setuptools-0.6c11.tar.gz
+    cd setuptools-0.6c11
+    $OPENSHIFT_DATA_DIR/bin/python2.7 setup.py install
+    cd $OPENSHIFT_TMP_DIR
+    wget http://pypi.python.org/packages/source/p/pip/pip-1.5.5.tar.gz
+    tar zxf pip-1.5.5.tar.gz
+    cd pip-1.5.5
+    $OPENSHIFT_DATA_DIR/bin/python2.7 setup.py install
+    ###TODO: Activate VENV , Install things , and run tornado from VENV
+    $OPENSHIFT_DATA_DIR/bin/pip install -r  "Tornado==3.2.2" pyCurl pymongo motor virtualenv httpie
+    
+  fi
+  # cleanup
+  rm -rf $OPENSHIFT_TMP_DIR/*
+fi
+client_result "Success: Build Successful"
