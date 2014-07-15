@@ -40,7 +40,7 @@ if [ ! -d $OPENSHIFT_DATA_DIR/bin ]; then
     cd pip-1.5.5
     $OPENSHIFT_DATA_DIR/bin/python2.7 setup.py install
     ###TODO: Activate VENV , Install things , and run tornado from VENV
-    $OPENSHIFT_DATA_DIR/bin/pip install -r  "Tornado==3.2.2" pyCurl pymongo motor virtualenv httpie
+    $OPENSHIFT_DATA_DIR/bin/pip install "Tornado==3.2.2" pyCurl pymongo motor virtualenv httpie
     
   fi
   # cleanup
