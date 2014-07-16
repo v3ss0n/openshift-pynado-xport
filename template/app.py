@@ -19,5 +19,5 @@ if __name__ == '__main__':
     pid = str(os.getpid())
     pidfile = temp_dir +app_name + ".pid"
     file(pidfile, 'w').write(pid)
-    application.listen(host,port)
+    application.listen(port,host)
     tornado.ioloop.IOLoop.instance().start() 

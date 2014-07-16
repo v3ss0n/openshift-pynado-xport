@@ -78,6 +78,11 @@ Endpoints:
     Private-Port:      8080
     Public-Port-Name:  PROXY_PORT
     Protocols: [http,ws]
+    Mappings:
+        - Frontend: '/ws_front'
+          Backend: '/ws_back'
+          Options:
+            websocket: true
   - Private-IP-Name:   IP
     Private-Port-Name: EXTRA_PORT
     Private-Port:      18000
