@@ -10,6 +10,6 @@ ${OPENSHIFT_PYNADO_DIR}pynado/bin/conda create --yes -n pynadoenv python
 echo "Before activing VirtualEnv :  pynadoenv"
 source ${OPENSHIFT_PYNADO_DIR}pynado/bin/activate pynadoenv
 echo "inside VirtualEnv :  pynadoenv"
-conda install --yes pip "Tornado==3.2.2" pycurl
-pip install pymongo  httpie
+conda install --yes pip  pycurl
+pip install pymongo  httpie "Tornado==3.2.2"
 #conda clean
