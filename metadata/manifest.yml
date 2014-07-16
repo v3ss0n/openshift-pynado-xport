@@ -9,13 +9,14 @@ Cartridge-Version: 0.0.1
 Cartridge-Vendor: hexcode
 Vendor: hexcode
 Categories:
+  - service
   - web_framework
   - experimental
 Website:
 Help-Topics:
   "Getting Started": https://www.openshift.com/community/videos/getting-started-with-diy-applications-on-openshift
 Cart-Data:
-  - Key: OPENSHIFT_DIY_LOG_DIR
+  - Key: OPENSHIFT_PYNADO_LOG_DIR
     Type: environment
     Description: "Directory to store application log files."
   - Key: OPENSHIFT_TMP_DIR
@@ -24,16 +25,16 @@ Cart-Data:
   - Key: OPENSHIFT_REPO_DIR
     Type: environemnt
     Description: "Application root directory where application files reside. This directory is reset every time you do a git-push"
-  - Key: OPENSHIFT_DIY_PORT
+  - Key: OPENSHIFT_PYNADO_PORT
     Type: environment
     Description: "Internal port to which the web-framework binds to."
-  - Key: OPENSHIFT_DIY_IP
+  - Key: OPENSHIFT_PYNADO_IP
     Type: environment
     Description: "Internal IP to which the web-framework binds to."
-  - Key: OPENSHIFT_DIY_EXTRA_PORT
+  - Key: OPENSHIFT_PYNADO_EXTRA_PORT
     Type: environment
     Description: "Internal port for something other than web-framework to bind to."
-  - Key: OPENSHIFT_DIY_EXTRA_PROXY_PORT
+  - Key: OPENSHIFT_PYNADO_EXTRA_PROXY_PORT
     Type: environment
     Description: "External node port to reach non-web-framework port."
   - Key: OPENSHIFT_APP_DNS
@@ -52,8 +53,9 @@ Cart-Data:
     Type: environment
     Description: "Unique ID which identified the gear. This value changes between gears."
 Provides:
-  - tornado
-  - python2.7.8
+    - python-2.7
+    - python
+    - python(version) = 2.7
 Publishes:
   publish-http-url:
     Type: "NET_TCP:httpd-proxy-info"
@@ -77,6 +79,9 @@ Endpoints:
     Private-Port-Name: PORT
     Private-Port:      8080
     Public-Port-Name:  PROXY_PORT
+    Protocols:
+      - http
+      - ws
     Mappings:
       - Frontend:      ""
         Backend:       ""
