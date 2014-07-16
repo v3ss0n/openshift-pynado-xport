@@ -8,7 +8,12 @@ case "$1" in
 esac
 
 # Create additional directories required by the diy cartridge
-mkdir -p ${OPENSHIFT_PYNADO_DIR}run
+mkdir -p ${OPENSHIFT_PYNADO_DIR}/run/
+mkdir -p ${OPENSHIFT_PYNADO_DIR}/{pid,socket)
 
-client_result "Disclaimer: On first push , this will automatically build Python and PIP Install:  Tornado , PyMongo , it will take around 10 mins+"
 
+
+# make sure the static dir exists
+
+
+client_result "Disclaimer: On first push , this will automatically download Python from continuum and Anaconda Install:  Tornado , PyMongo , it will take around 10 mins+"
