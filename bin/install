@@ -12,4 +12,4 @@ source ${OPENSHIFT_PYNADO_DIR}pynado/bin/activate pynadoenv
 echo "inside VirtualEnv :  pynadoenv"
 conda install --yes pip "Tornado==3.2.2" pycurl
 pip install pymongo  httpie
-conda clean
+#conda clean
