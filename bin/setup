@@ -9,7 +9,7 @@ esac
 
 # Create additional directories required by the diy cartridge
 mkdir -p ${OPENSHIFT_PYNADO_DIR}/run/
-mkdir -p ${OPENSHIFT_PYNADO_DIR}/{pid,socket)
+mkdir -p ${OPENSHIFT_PYNADO_DIR}/{pid,socket}
 
 
 
