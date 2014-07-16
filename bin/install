@@ -9,7 +9,7 @@ wget http://repo.continuum.io/miniconda/Miniconda-${MINICONDA_VERSION}-Linux-x86
 rm Miniconda-${MINICONDA_VERSION}-Linux-x86_64.sh
 popd
 ${OPENSHIFT_PYNADO_DIR}pynado/bin/conda create --yes -n pynadoenv python 
-source ${OPENSHIFT_PYNADO_DIR}pynado/bin/activate pynadoenv
-echo "inside VirtualEnv :  pynadoenv"
-    conda install --yes pip "Tornado==3.2.2"
-    pip install pymongo pycurl httpie
+#source ${OPENSHIFT_PYNADO_DIR}pynado/bin/activate pynadoenv
+#echo "inside VirtualEnv :  pynadoenv"
+#conda install --yes pip "Tornado==3.2.2"
+#pip install pymongo pycurl httpie
