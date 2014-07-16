@@ -3,4 +3,4 @@
 # script. The application will work only if it binds to
 # $OPENSHIFT_INTERNAL_IP:8080
 $NADO_VENV
-python2.7 $OPENSHIFT_REPO_DIR/app.py
+nohup python2.7 $OPENSHIFT_REPO_DIR/app.py &
