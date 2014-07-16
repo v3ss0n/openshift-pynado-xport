@@ -16,4 +16,5 @@ mkdir -p ${OPENSHIFT_PYNADO_DIR}/{pid,socket}
 # make sure the static dir exists
 
 
-client_result "Disclaimer: On first push , this will automatically download Python from continuum and Anaconda Install:  Tornado , PyMongo , it will take around 10 mins+"
+client_result "Disclaimer: On first push , this will automatically download Python from continuum and Anaconda , 
+then it Installs:  Tornado , PyMongo . Will take around 2-3 mins+"

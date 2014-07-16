@@ -79,8 +79,8 @@ Endpoints:
     Public-Port-Name:  PROXY_PORT
     Protocols: [http,ws]
     Mappings:
-        - Frontend: '/file_path'
-          Backend: '/file_path2'
+        - Frontend: '/ws_front'
+          Backend: '/ws_back'
           Options:
             websocket: true
   - Private-IP-Name:   IP
