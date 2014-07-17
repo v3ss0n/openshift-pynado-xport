@@ -10,7 +10,6 @@ Cartridge-Vendor: hexcode
 Vendor: hexcode
 Categories:
   - service
-  - web_framework
   - experimental
 Website:
 Help-Topics:

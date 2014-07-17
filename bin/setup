@@ -14,7 +14,5 @@ mkdir -p ${OPENSHIFT_PYNADO_DIR}/{pid,socket}
 
 
 # make sure the static dir exists
-
-
-client_result "Disclaimer: On first push , this will automatically download Python from continuum and Anaconda , 
+client_result "Disclaimer:This will automatically download MiniCondo from continuum.io , 
 then it Installs:  Tornado , PyMongo . Will take around 2-3 mins+"
