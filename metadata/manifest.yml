@@ -10,6 +10,7 @@ Cartridge-Vendor: hexcode
 Vendor: hexcode
 Categories:
   - service
+  - web_proxy
   - experimental
 Website:
 Help-Topics:
