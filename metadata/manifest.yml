@@ -1,14 +1,15 @@
 Name: python-tornado-xport
 Cartridge-Short-Name: PYNADO
 Display-Name: python-tornado-extraport
-Description: "Python 2.7.8 + Tornado 3.2.2 + Extraport + Websocket!"
-Version: '0.3'
+Description: "Python 2.7.8 + Tornado 4.1 + Extraport + Websocket!"
+Version: '0.4'
 License: "ASL 2.0"
 License-Url: http://www.apache.org/licenses/LICENSE-2.0.txt
 Cartridge-Version: 0.0.1
 Cartridge-Vendor: hexcode
 Vendor: hexcode
 Categories:
+  - web_framework
   - service
   - web_proxy
   - experimental
@@ -53,6 +54,7 @@ Cart-Data:
     Type: environment
     Description: "Unique ID which identified the gear. This value changes between gears."
 Provides:
+    - diy-0.1
     - python-2.7
     - python
     - python(version) = 2.7
