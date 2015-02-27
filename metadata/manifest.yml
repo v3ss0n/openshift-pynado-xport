@@ -11,8 +11,7 @@ Vendor: hexcode
 Categories:
   - web_framework
   - service
-  - web_proxy
-  - experimental
+  - python
 Website:
 Help-Topics:
   "Getting Started": https://www.openshift.com/community/videos/getting-started-with-diy-applications-on-openshift
