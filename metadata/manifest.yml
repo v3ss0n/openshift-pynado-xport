@@ -87,9 +87,7 @@ Endpoints:
       - Frontend:      ""
         Backend:       ""
         Options:       { websocket: true }
-      - Frontend:      "/health"
-        Backend:       ""
-        Options:       { health: true }
+
   - Private-IP-Name:   IP
     Private-Port-Name: EXTRA_PORT
     Private-Port:      18000
