@@ -10,7 +10,7 @@ Bin dir for anaconda pyton : $NADO_CONDA
 ***Installation*** :
 ```
 
-rhc app create AppName http://cartreflect-claytondev.rhcloud.com/github/v3ss0n/openshift-pynado-xport
+rhc app create AppName http://cartreflect-claytondev.rhcloud.com/github/v3ss0n/openshift-python-tornado-extraport
 
 ```
 
