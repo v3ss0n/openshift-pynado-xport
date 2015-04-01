@@ -1,6 +1,8 @@
 Anaconda Python 2.7.8 and Tornado.
 This cartdrige provides Python 2.7.8 + Tornado 4.1.0 + Extraport + Websocket .
-It is built using continuum.io MiniConda Python, providing very powerful conda package manager and conda virtualenv.
+
+It is built using continuum.io MiniConda Python, 
+providing very powerful conda package manager and conda virtualenv.
 
 
 It is minimal , only 100mb all libs installed.
