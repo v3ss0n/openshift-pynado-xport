@@ -5,9 +5,7 @@ It is built using continuum.io MiniConda Python, providing very powerful conda p
 
 It is minimal , only 100mb all libs installed.
 
-To login to virtualenv enter : ```$NADO_VENV```
 
-Python Bin Dir  :  ```cd $NADO_CONDA```
 
 ***Installation*** :
 ```
@@ -15,6 +13,10 @@ Python Bin Dir  :  ```cd $NADO_CONDA```
 rhc app create AppName http://cartreflect-claytondev.rhcloud.com/github/v3ss0n/openshift-python-tornado-extraport
 
 ```
+
+To login to virtualenv enter : ```$NADO_VENV```
+
+Python Bin Dir  :  ```cd $NADO_CONDA```
 
 How this cartdrige installed behind the scenes?
 
