@@ -23,7 +23,7 @@ to login to virtualenv : $NADO_VENV
 Bin dir for anaconda pyton : $NADO_CONDA
 
 installation :
-    ```bash
+    ```
     
     rhc app create AppName http://cartreflect-claytondev.rhcloud.com/github/v3ss0n/openshift-pynado-xport
     
