@@ -4,8 +4,8 @@ It is built using continuum.io MiniConda Python, providing very powerful conda p
 
 
 It is minimal , only 100mb all libs installed.
-to login to virtualenv : $NADO_VENV
-Bin dir for anaconda pyton : $NADO_CONDA
+To login to virtualenv enter : ```$NADO_VENV```
+Python Bin Dir  :  ```cd $NADO_CONDA``
 
 ***Installation*** :
 ```
