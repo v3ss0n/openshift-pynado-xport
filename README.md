@@ -1,7 +1,20 @@
 Anaconda Python 2.7.8 and Tornado.
 This cartdrige provides Python 2.7.8 + Tornado 4.1.0 + Extraport + Websocket .
 It is built using continuum.io MiniConda Python, providing very powerful conda package manager and conda virtualenv.
-This does the trick.
+
+
+It is minimal , only 100mb all libs installed.
+to login to virtualenv : $NADO_VENV
+Bin dir for anaconda pyton : $NADO_CONDA
+
+***Installation*** :
+```
+
+rhc app create AppName http://cartreflect-claytondev.rhcloud.com/github/v3ss0n/openshift-pynado-xport
+
+```
+
+How this cartdrige installed behind the scenes?
 
 ```
 MINICONDA_VERSION=3.5.5
@@ -17,18 +30,4 @@ echo "inside VirtualEnv :  pynadoenv"
 conda install --yes pip  pycurl
 pip install pymongo toro httpie "Tornado==4.1"
 ```
-
-It is minimal , only 100mb all libs installed.
-to login to virtualenv : $NADO_VENV
-Bin dir for anaconda pyton : $NADO_CONDA
-
-installation :
-```
-
-rhc app create AppName http://cartreflect-claytondev.rhcloud.com/github/v3ss0n/openshift-pynado-xport
-
-```
-    
-from web console:
-    paste this inside 
 
