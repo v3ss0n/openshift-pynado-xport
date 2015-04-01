@@ -4,18 +4,18 @@ It is built using continuum.io MiniConda Python, providing very powerful conda p
 This does the trick.
 
 ```
-    MINICONDA_VERSION=3.5.5
-    pushd $OPENSHIFT_TMP_DIR
-    wget http://repo.continuum.io/miniconda/Miniconda-${MINICONDA_VERSION}-Linux-x86_64.sh
-    /bin/bash ./Miniconda-${MINICONDA_VERSION}-Linux-x86_64.sh -b -p ${OPENSHIFT_PYNADO_DIR}pynado
-    rm Miniconda-${MINICONDA_VERSION}-Linux-x86_64.sh
-    popd
-    ${OPENSHIFT_PYNADO_DIR}pynado/bin/conda create --yes -n pynadoenv python 
-    echo "Before activing VirtualEnv :  pynadoenv"
-    source ${OPENSHIFT_PYNADO_DIR}pynado/bin/activate pynadoenv
-    echo "inside VirtualEnv :  pynadoenv"
-    conda install --yes pip "Tornado==4.1.0" pycurl
-    pip install pymongo  httpie
+MINICONDA_VERSION=3.5.5
+pushd $OPENSHIFT_TMP_DIR
+wget http://repo.continuum.io/miniconda/Miniconda-${MINICONDA_VERSION}-Linux-x86_64.sh
+/bin/bash ./Miniconda-${MINICONDA_VERSION}-Linux-x86_64.sh -b -p ${OPENSHIFT_PYNADO_DIR}pynado
+rm Miniconda-${MINICONDA_VERSION}-Linux-x86_64.sh
+popd
+${OPENSHIFT_PYNADO_DIR}pynado/bin/conda create --yes -n pynadoenv python 
+echo "Before activing VirtualEnv :  pynadoenv"
+source ${OPENSHIFT_PYNADO_DIR}pynado/bin/activate pynadoenv
+echo "inside VirtualEnv :  pynadoenv"
+conda install --yes pip  pycurl
+pip install pymongo toro httpie "Tornado==4.1"
 ```
 
 It is minimal , only 100mb all libs installed.
